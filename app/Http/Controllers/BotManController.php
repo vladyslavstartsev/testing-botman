@@ -13,6 +13,7 @@ class BotManController extends Controller
 	 */
     public function handle()
     {
+        dd('dsfsdfds');
     	$botman = app('botman');
         $botman->verifyServices(env('TOKEN_VERIFY'));
 
