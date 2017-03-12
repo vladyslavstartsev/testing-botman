@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Conversations\ExampleConversation;
-use Illuminate\Http\Request;
 use Mpociot\BotMan\BotMan;
 
 class BotManController extends Controller
@@ -13,7 +12,7 @@ class BotManController extends Controller
 	 */
     public function handle()
     {
-        dd('dsfsdfds');
+
     	$botman = app('botman');
         $botman->verifyServices(env('TOKEN_VERIFY'));
 
