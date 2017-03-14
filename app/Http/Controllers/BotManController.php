@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Conversations\ExampleConversation;
+use Illuminate\Http\JsonResponse;
 use Mpociot\BotMan\BotMan;
 
 class BotManController extends Controller
@@ -14,6 +15,7 @@ class BotManController extends Controller
     {
         /** @var $botman BotMan*/
     	$botman = app('botman');
+    	return new JsonResponse('hello', 200);
         $botman->verifyServices(env('TOKEN_VERIFY'));
 
         // Simple respond method
