@@ -12,7 +12,7 @@ class BotManController extends Controller
 	 */
     public function handle()
     {
-
+        /** @var $botman BotMan*/
     	$botman = app('botman');
         $botman->verifyServices(env('TOKEN_VERIFY'));
 
