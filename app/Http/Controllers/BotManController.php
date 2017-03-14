@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Conversations\ExampleConversation;
 use Illuminate\Http\JsonResponse;
-use Symfony\Component\HttpFoundation\Request;
+use Illuminate\Http\Request;
 use Mpociot\BotMan\BotMan;
 
 class BotManController extends Controller
@@ -12,11 +12,11 @@ class BotManController extends Controller
 	/**
 	 * Place your BotMan logic here.
 	 */
-    public function handle()
+    public function handle(Request $request)
     {
         /** @var $botman BotMan*/
     	$botman = app('botman');
-    	return new JsonResponse(Request::createFromGlobals(), 200);
+    	return new JsonResponse($request->all(), 200);
         $botman->verifyServices(env('TOKEN_VERIFY'));
 
         // Simple respond method
